@@ -25,6 +25,7 @@ class Taskcontroller extends Controller
            //data tika view akekata stroge kara agenima
            return view('bootsrap')->with('bootsrap',$data);
     }
+    
     //compleed adala ake
     public function updateTaskAsCompleted($id){
         $taskk=task::find($id);
