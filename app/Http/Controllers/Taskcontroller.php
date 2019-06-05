@@ -25,7 +25,7 @@ class Taskcontroller extends Controller
            //data tika view akekata stroge kara agenima
            return view('bootsrap')->with('bootsrap',$data);
     }
-    
+
     //compleed adala ake
     public function updateTaskAsCompleted($id){
         $taskk=task::find($id);
@@ -57,7 +57,15 @@ class Taskcontroller extends Controller
         return view('updatetask')->with('taskdata',$taskk);
     }
     public function updatetask(Request $request){
-        dd($request);
+         $id=$request->id;
+         $task=$request->task;
+         $data=task::find($id);
+         $data->task=$task;
+         $data->save();
+         $datas=task::all();
+
+         return view('bootsrap')->with('bootsrap',$datas);
+
     }
 
 
