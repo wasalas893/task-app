@@ -56,11 +56,12 @@ class Taskcontroller extends Controller
 
         return view('updatetask')->with('taskdata',$taskk);
     }
+    //update viw ake new viw akekaa data yawima
     public function updatetask(Request $request){
          $id=$request->id;
          $task=$request->task;
          $data=task::find($id);
-         $data->task=$task;
+         
          $data->save();
          $datas=task::all();
 
